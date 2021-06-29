@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<!-- Coding By CodingNepal - youtube.com/codingnepal -->
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>task-7</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+   <center> <div class="main">
+
+
+     <div class="glass"> 
+
+      <div class="container">
+
+          <div class="card">
+
+              <div class="contain">
+                  <h2 class="h2">Shell</h2>
+                   
+                  <div>
+      <span style="color:white; font-style: bolid; border-radius: 100px;">[root@localhost ~]#</span>
+                  <input    id="in1" />  
+    <pre><div id="d1" style="color:white; font-style: bolid; font-family: Avenir Next; "> (Hear Is Your Outout)</div>  <pre>
+      <center><button onclick="lw()"  class="btn">Run</button></center>
+      
+                </div>
+
+
+          </div>   
+    
+    </div>
+
+
+</div></center>
+<footer></footer>
+<script>
+        function lw() {
+                // here xhr is a object from XMLHttpRequest() class
+                var i = document.getElementById("in1").value
+
+                var xhr = new XMLHttpRequest();
+                // here fasle means sync and true means async with AJAX
+                xhr.open("GET", "http://192.168.99.101/cgi-bin/task8.py?x=" + i, true);
+                // here write IP(192.168.43.125) after config your IP adress using - (ifconfig enp0s3)
+                xhr.send();
+
+            // here  onload will take the return text from server [cgi-bin folder]
+                xhr.onload = function() {
+                        var output = xhr.responseText;
+                        document.getElementById("d1").innerHTML = output;
+                }
+                
+}
+</script>
+      </form>
+    </div>
+
+  </body>
+</html>
